@@ -19,7 +19,7 @@ header {
     color: #fff;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space between;
     align-items: center;
 }
 
@@ -95,6 +95,14 @@ footer {
     padding: 20px;
     text-align: center;
     margin-top: 800px;
+}
+h2 {
+    text-align: center;
+}
+
+/* Add this rule to center the <p> elements */
+p {
+    text-align: center;
 }
 
 /* Footer Columns Styles */
