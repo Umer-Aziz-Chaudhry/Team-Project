@@ -1,19 +1,10 @@
-/* Global Styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-}
-body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    background-color: #f2f2f2;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Header Styles */
 header {
     background-color: #000;
     color: #fff;
@@ -88,6 +79,63 @@ nav a {
     font-weight: lighter;
 }
 
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #555;
+}
 /* Footer Styles */
 footer {
     background-color: #000;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tracking-form {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        .tracking-results {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Tracking System</h1>
+    </header>
+    <div class="container">
+        <div class="tracking-form">
+            <form id="tracking-form">
+                <input type="text" id="order-number" placeholder="Enter your order number">
+                <input type="submit" value="Track Order">
+            </form>
+        </div>
+        <div class="tracking-results" id="tracking-results">
+            <!-- Tracking results here -->
+        </div>
+    </div>
+    <script>
+        document.getElementById("tracking-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const orderNumber = document.getElementById("order-number").value;
+            const trackingResults = document.getElementById("tracking-results");
+
+            // For demonstration purposes, we'll use a dummy result
+            // Generate a random number between 2 and 7 for estimated delivery days
+const minDays = 2;
+const maxDays = 7;
+const estimatedDays = Math.floor(Math.random() * (maxDays - minDays + 1)) + minDays;
+
+const dummyResult = "Your order with order number " + orderNumber + " is currently in transit and will be delivered within " + estimatedDays + " days.";
+
+            trackingResults.innerHTML = "<p>" + dummyResult + "</p>";
+        });
+    </script>
+</body>
+</html>
