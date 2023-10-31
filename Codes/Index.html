@@ -1,81 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <style>
+        body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+/* Styling for the scrollbar track */
+body::-webkit-scrollbar {
+    width: 0; /* Set the width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the background color of the scrollbar track to transparent */
+}
+
+/* Styling for the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5); /* Set the color of the scrollbar thumb (semi-transparent white in this example) */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+/******************************************Main Body*********************************/
+
+/********************************************Header**********************************/
+
+#header {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    height: 80px;
+    align-items: center; /* Center the items vertically */
+    justify-content: space-between; /* Space elements evenly in the header */
+}
+
+#header span {
+    display: flex;
+    align-items: center; /* Center the items vertically within the flex container */
+    color: white;
+    font-size: 16px;
+
+}
+
+/* Format each header text separately */
+#cinema {
+    font-weight: bold; /* Example styling: make the "Cinema" text bold */
+    position: absolute;
+    left: 5%;
+}
+
+#cinema i {
+    font-size: 60px;
+}
+
+#search {
+    position: relative;
+    margin-left: 70%; /* Align to the right */
+}
+
+#searchInput {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 200px;
+}
+
+#searchButton {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.header-action {
+    margin-left: 40%;
+}
+
+
+#signin {
+
+    position: absolute;
+    left: 87%; /* Add some space between the icon and the text */
+}
+
+#signin i {
+    font-size: 24px;
+}
+/***************************************Header***************************************/
+
+/***************************************Taskbar**************************************/
+
+#taskbar {
+    background-color: #94929276; /* Change background color to orange */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#taskbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#taskbar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#taskbar li:last-child {
+    margin-right: 0;
+}
+
+#taskbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+}
+
+/* Style the active link */
+#taskbar a.active {
+    background-color: #8988886d; /* Set the active background color here */
+}
+
+#taskbar a:hover {
+    background-color: #5555556c;
+}
+/**************************************Taskbar*************************************/
+
+/***************************************Footer*************************************/
+
+footer {
+    background-color: black;
+    color: #b7b7b7;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Display the links in a vertical line */
+}
+
+footer h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+footer a {
+    color: #b7b7b7;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+/* Additional styles for the footer links */
+footer a {
+    display: inline-block; /* Display the links in a row */
+    margin-right: 10px; /* Add some space between the links */
+}
+
+/* Separate formatting for the copyright line */
+footer .copyright {
+    flex: 1;
+    margin-top: 200px;
+    color: #fff;
+    position: absolute;
+}
+
+/****************************************Footer**********************************/
+
+/****************************************Index Page******************************/
+
+#content {
+    padding: 20px;
+    flex-grow: 1; /* Allow the content to grow and push the footer to the bottom */
+}
+
+/* Slideshow Styles */
+#slideshow {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.slide {
+    width: 100%;
+    height: 400px;
+    display: none;
+}
+
+/* Show only the active slide */
+.slide.active {
+    display: block;
+}
+
+/* Style for the arrow elements */
+#left-arrow,
+#right-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#left-arrow {
+    left: 10px;
+}
+
+#right-arrow {
+    right: 10px;
+}
+
+.now-playing-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin-left: 50px;
+    margin-top: 20px; /* Add some space between the slideshow and the heading */
+}
+
+/* Additional styles for the movies section */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product {
+    margin: 10px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 210px;
+    height: 300px;
+    border-radius: 3px;
+    border: 1px solid black; /* Add a 1px solid black border */
+}
+
+.product-name {
+    color: black;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.product-name a {
+    text-decoration: none;
+    color: black; /* Adjust the color as per your design */
+}
+
+/* .now-playing-heading {
+    text-align: left;
+} */
+/*****************************************Index Page*********************************/
+
+    </style>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Shopping Websit</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Mobile Nexus</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="header-left">
+    <div id="header">
+        <span id="cinema" style="font-size: 36px;">
             <i class="mobile-icon fa fa-mobile"></i>
-            <h1>Mobile Store</h1>
-        </div>
-        <div class="header-links">
-            <input type="text" class="search-bar" placeholder="Search">
-            <button class="cart-button"><i class="fa fa-shopping-cart"></i> Cart</button>
-            <a href="#">Log In / Register</a>
-        </div>
-    </header>
+            &nbsp;&nbsp;Mobile Nexus
+        </span>
+        <input type="text" id="search" placeholder="Search..." style="font-size: 18px;">
+    
+        <!-- Cart Button -->
+        <a href="cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-shopping-cart" style="color: white;"></i>
+            &nbsp;&nbsp;
+        </a>
+    
+        <!-- Wishlist Heart Button -->
+        <a href="wishlist.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-regular fa-heart" style="color: white;"></i>
+            &nbsp;&nbsp;
+        </a>
+    
+        <a href="signin.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+    
 
-    <nav>
+    <div id="taskbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Product Catalog</a></li>
-            <li><a href="#">Offers</a></li>
-
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="AboutUS.html" class="nav-link">About Us</a></li>
+            <li><a href="product.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact US</a></li>
+            <li><a href="offer.html" class="nav-link">Offers</a></li>
         </ul>
-    </nav>
-
-    <div>
-        <!-- Your shopping content goes here -->
     </div>
 
-<footer>
-    <div class="footer-columns">
-        <div class="footer-column">
-            <h3>Company Info</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Mission & Vision</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Testimonials</a></li>
-            </ul>
+    <div id="content">
+        <!-- Slideshow Section -->
+        <div id="slideshow">
+            <div id="left-arrow" onclick="prevSlide()">&#10094;</div>
+            <img id="slide1" class="slide" src="images/slide1.jpg" alt="Slide 1">
+            <img id="slide2" class="slide" src="images/slide2.jpg" alt="Slide 2">
+            <img id="slide3" class="slide" src="images/slide3.jpg" alt="Slide 3">
+            <div id="right-arrow" onclick="nextSlide()">&#10095;</div>
         </div>
-        <div class="footer-column">
-            <h3>Help and Support</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Shipping Information</a></li>
-                <li><a href="#">Return Policy</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Help and Conrtact</a></li>
-            </ul>
+        <!-- Now Playing Heading -->
+        <h2 class="now-playing-heading">Mobiles</h2>
+            <!-- Movies Section -->
+        <div class="product-container">
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/iphone.jpg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/pixel.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/iphone.jpg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/pixel.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/iphone.jpg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/pixel.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
         </div>
-        <div class="footer-column">
-            <h3>Customer Care</h3>
-            <ul>
-                <li><a href="#">Order Status</a></li>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Warranty Information</a></li>
-                <li><a href="#">Shipping & Delivery</a></li>
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">Contact Customer Care</a></li>
-            </ul>
+        <h2 class="now-playing-heading">Watches</h2>
+
+        <div class="product-container">
+                 
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/watch.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+        <h2 class="now-playing-heading">Airpods</h2>
+
+        <div class="product-container">
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
+
+            <div class="product">
+                <a href="booking.html">
+                    <img src="images/airpods.jpeg" alt="Movie 1">
+                    <p class="product-name">Product Name</p>
+                    <p class="product-name">Product Price</p>
+                </a>
+            </div>
         </div>
     </div>
-    <p>&copy; 2023 Mobile Store. All rights reserved.</p>
-</footer>
+    <footer>
+        <div>
+            <h4>Social</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Youtube</a>
+            <a href="#">Whatsapp</a>
+        </div>
+        <div>
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Partners</a>
+            <a href="#">Admittance Procedure</a>
+            <a href="#">Persoonal Information</a>
+            <a href="#">Adversite</a>
+        </div>
+        <div>
+            <h4>Events</h4>
+            <a href="#">Groups and Events</a>
+            <a href="#">Private Watch Party</a>
+            <a href="#">Theatre</a>
+            <a href="#">Birthday Parties</a>
+            <a href="#">Film Festivals</a>
+            <a href="#">IMAX Educational Screenings</a>
+        </div>
+        <div>
+            <h4>Contact Us</h4> 
+            <p>Email: info@cinema.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Address: Aston, Birmingham</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Mobile Nexus. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
+
+
+<script>
+    // JavaScript to handle slideshow functionality
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Function to switch to the next slide every 3 seconds
+    function startSlideshow() {
+        setInterval(() => {
+            nextSlide();
+        }, 3000);
+    }
+
+    // Display the first slide initially
+    showSlide(currentSlide);
+
+    // Start the slideshow
+    startSlideshow();
+    
+</script>
 </html>
