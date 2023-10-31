@@ -1,81 +1,87 @@
+
+      
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Shopping Websit</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to  CSS file -->
+    <title>Order History - Your Mobile Store</title>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <i class="mobile-icon fa fa-mobile"></i>
-            <h1>Mobile Store</h1>
-        </div>
-        <div class="header-links">
-            <input type="text" class="search-bar" placeholder="Search">
-            <button class="cart-button"><i class="fa fa-shopping-cart"></i> Cart</button>
-            <a href="#">Log In / Register</a>
-        </div>
-    </header>
+    <main>
+        <h2>Order History</h2>
+        <div class="order-history">
+            <div class="order">
+                <div class="order-header">
+                    <div class="order-info">
+                        <h3>Order Placed</h3>
+                        <p>January 1, 2023</p>
+                    </div>
+                    <div class="order-info">
+                        <h3>Order Total</h3>
+                        <p>$499.99</p>
+                    </div>
+                    <div class="order-info">
+                        <h3>Order Status</h3>
+                        <p>Shipped</p>
+                    </div>
+                    
+    
+                </div>
+                <div class="order-details">
+                    <div class="product">
+                        <div class="product-info">
+                            <h4>Order ID: #01 | Product Name 2</h4>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Product Catalog</a></li>
-            <li><a href="#">Offers</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+                            <img src="./src/mob1.jpg" alt="Product 1">
 
-    <div>
-        <!-- Your shopping content goes here -->
-    </div>
+                            <p>Price: $199.99</p>
+                            <p>Quantity: 2</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="order-actions">
+                        <a href="order001.html">View Receipt</a>
+                    </div>
+                </div>
 
-<footer>
-    <div class="footer-columns">
-        <div class="footer-column">
-            <h3>Company Info</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Mission & Vision</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Testimonials</a></li>
-            </ul>
+                <div class="order">
+                    <div class="order-header">
+                        <div class="order-info">
+                            <h3>Order Placed</h3>
+                            <p>January 1, 2023</p>
+                        </div>
+                        <div class="order-info">
+                            <h3>Order Total</h3>
+                            <p>$499.99</p>
+                        </div>
+                        <div class="order-info">
+                            <h3>Order Status</h3>
+                            <p>Processing</p>
+                        </div>
+                        
+                    </div>
+                    <div class="order-details">
+                        <div class="product">
+                            <div class="product-info">
+                                <h4>Order ID: #01 | Product Name 2</h4>
+
+                                <img src="./src/mob1.jpg" alt="Product 2">
+
+                                <p>Price: $199.99</p>
+                                <p>Quantity: 3</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="order-actions">
+                            <a href="order001.html">View Receipt</a>
+                        </div>
+                    </div>
+                    
+            </div>
+            <!-- Add more order entries as you needed -->
         </div>
-        <div class="footer-column">
-            <h3>Help and Support</h3>
-            <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Shipping Information</a></li>
-                <li><a href="#">Return Policy</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Help and Conrtact</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Customer Care</h3>
-            <ul>
-                <li><a href="#">Order Status</a></li>
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Warranty Information</a></li>
-                <li><a href="#">Shipping & Delivery</a></li>
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">Contact Customer Care</a></li>
-            </ul>
-        </div>
-    </div>
-    <p>&copy; 2023 Mobile Store. All rights reserved.</p>
-</footer>
+    </main>
 </body>
 </html>
