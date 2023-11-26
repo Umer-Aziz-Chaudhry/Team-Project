@@ -47,39 +47,17 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-/* Format each header text separately */
-/*#cinema {
+/* Format each header text separately */ */
+#title {
     font-weight: bold; 
     position: absolute;
     left: 5%;
+    white-space: nowrap; /* Prevent line breaks */
 }
-
-#cinema i {
+#title i {
     font-size: 60px;
-}*/
-
-#search {
-    position: relative;
-    margin-left: 70%; /* Align to the right */
 }
 
-#searchInput {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    width: 200px;
-}
-
-#searchButton {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
 
 .header-actions {
     display: flex;
@@ -92,10 +70,65 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-#signin {
+#search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 57%; /* Adjust the spacing as needed */
+    position:absolute;
+}
 
+#search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 5%;
+}
+
+#search-bar button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add this style to the existing styles */
+#cart {
+    display: flex;
+    align-items: center;
+    margin-right: 12%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+}
+
+#cart i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+/* Add this style to the existing styles */
+#wishlist {
+    display: flex;
+    align-items: center;
+    margin-left: 62%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    border-left: 1px solid white;
+    padding-left: 5px;
+}
+
+#wishlist i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+
+#signin {
     position: absolute;
     left: 87%; /* Add some space between the icon and the text */
+    padding-left: 10px; /* Add some padding to the left of the sign-in text for better spacing */
 }
 
 #signin i {
@@ -276,7 +309,7 @@ footer .copyright {
     color: black; /* Adjust the color as per your design */
 }
 
-.now-playing-heading {
+.product-catagory {
     text-align: left;
 }
 /*****************************************Index Page*********************************/
@@ -289,30 +322,37 @@ footer .copyright {
     <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <div id="header">
-        <span id="cinema" style="font-size: 36px;">
+        <span id="title" style="font-size: 36px;">
             <i class="mobile-icon fa fa-mobile"></i>
-            &nbsp;&nbsp;Mobile Wave
+            &nbsp;&nbsp;MobileWave
         </span>
-        <input type="text" id="search" placeholder="Search..." style="font-size: 18px;">
-    
-        <!-- Cart Button -->
-        <a href="cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
-            <i class="fa-solid fa-shopping-cart" style="color: white;"></i>
+
+        <div id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
+        
+
+        <!-- Add the wishlist icon and link -->
+        <a href="#" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
             &nbsp;&nbsp;
         </a>
-    
-        <!-- Wishlist Heart Button -->
-        <a href="wishlist.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: white;">
-            <i class="fa-regular fa-heart" style="color: white;"></i>
+
+        <!-- Add the cart icon and link -->
+        <a href="#" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
             &nbsp;&nbsp;
         </a>
-    
+
         <a href="signin.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
             <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
             &nbsp;&nbsp;Sign In / Join Now
         </a>
     </div>
+
     
 
     <div id="taskbar">
@@ -335,7 +375,7 @@ footer .copyright {
             <div id="right-arrow" onclick="nextSlide()">&#10095;</div>
         </div>
         <!-- Now Playing Heading -->
-        <h2 class="now-playing-heading">Mobiles</h2>
+        <h2 class="product-catagory">Mobiles</h2>
             <!-- Movies Section -->
         <div class="product-container">
             <div class="product">
@@ -387,7 +427,7 @@ footer .copyright {
             </div>
 
         </div>
-        <h2 class="now-playing-heading">Watches</h2>
+        <h2 class="product-catagory">Watches</h2>
 
         <div class="product-container">
                  
@@ -438,7 +478,7 @@ footer .copyright {
                     <p class="product-name">Product Price</p>
                 </a>
             </div>
-        <h2 class="now-playing-heading">Airpods</h2>
+        <h2 class="product-catagory">Airpods</h2>
 
         <div class="product-container">
 
