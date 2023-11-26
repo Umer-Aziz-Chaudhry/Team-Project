@@ -330,10 +330,10 @@ footer .copyright {
         </span>
 
         <div id="search-bar">
-            <input type="text" placeholder="Search...">
-            <button type="button">Search</button>
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
         </div>
-        
+
 
         <!-- Add the wishlist icon and link -->
         <a href="#" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
@@ -347,7 +347,7 @@ footer .copyright {
             &nbsp;&nbsp;
         </a>
 
-        <a href="signin.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
             <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
             &nbsp;&nbsp;Sign In / Join Now
         </a>
@@ -568,7 +568,7 @@ footer .copyright {
             <p>Address: Aston, Birmingham</p>
         </div>
         <div class="copyright">
-            <p>&copy; 2023 Mobile Nexus. All rights reserved.</p>
+            <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
         </div>
     </footer>
 
@@ -613,4 +613,27 @@ footer .copyright {
     startSlideshow();
     
 </script>
+<script>
+    function searchItem() {
+        // Get the value entered in the search input
+        const searchTerm = document.getElementById('search-input').value;
+    
+        // Placeholder database (replace this with your actual database logic)
+        const database = [
+            { name: 'Product 1', category: 'Mobiles' },
+            { name: 'Product 2', category: 'Watches' },
+            { name: 'Product 3', category: 'Air Pods' },
+        ];
+    
+        // Check if the searched term is present in the database
+        const results = database.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+        // Display the results (you can customize this part based on your needs)
+        if (results.length > 0) {
+            alert(`Found ${results.length} item(s) matching "${searchTerm}": ${results.map(item => item.name).join(', ')}`);
+        } else {
+            alert(`No items found matching "${searchTerm}"`);
+        }
+    }
+    </script>
 </html>
