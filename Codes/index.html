@@ -295,17 +295,41 @@ footer .copyright {
     max-width: 210px;
     height: 300px;
     border-radius: 3px;
-    border: 1px solid black; /* Add a 1px solid black border */
+    border: 1px solid black;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.product img:hover {
+    transform: scale(1.1); /* Scale the image by 10% on hover */
 }
 
 .product-name {
     color: black;
     font-size: 16px;
+    font-weight: bold; /* Add this line to make the text bold */
     margin-top: 5px;
 }
 
 .product-name a {
     text-decoration: none;
+    color: black; /* Adjust the color as per your design */
+}
+
+.product-price {
+    color: #333; /* Set the color for the product price */
+    font-size: 14px; /* Set the font size for the product price */
+    font-weight: bold; /* Add this line to make the text bold */
+    margin-top: 5px; /* Adjust the top margin as needed */
+}
+
+a {
+    text-decoration: none; /* Remove the underline from all links */
+}
+
+/* Separate formatting for the product name and price links */
+.product-name a,
+.product-price a {
+    text-decoration: none; /* Remove the underline from product name and price links */
     color: black; /* Adjust the color as per your design */
 }
 
@@ -374,161 +398,160 @@ footer .copyright {
             <img id="slide3" class="slide" src="images/slide3.jpg" alt="Slide 3">
             <div id="right-arrow" onclick="nextSlide()">&#10095;</div>
         </div>
-        <!-- Now Playing Heading -->
-        <h2 class="product-catagory">Mobiles</h2>
-            <!-- Movies Section -->
-        <div class="product-container">
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/iphone.jpg" alt="Movie 1">
+
+        <h2 id="watches-category" class="product-catagory">Watches</h2>
+        <div class="product-container" id="watches-container">
+            <!-- Product 1 -->
+            <div class="product" id="product1">
+                <a href="product_details.html">
+                    <img src="images/iphone.jpg" alt="Product 1">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/pixel.jpeg" alt="Movie 1">
+            <div class="product" id="product2">
+                <a href="product_details.html">
+                    <img src="images/pixel.jpeg" alt="Product 2">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/iphone.jpg" alt="Movie 1">
+            <div class="product" id="product3">
+                <a href="product_details.html">
+                    <img src="images/iphone.jpg" alt="Product 3">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/pixel.jpeg" alt="Movie 1">
+            <div class="product" id="product4">
+                <a href="product_details.html">
+                    <img src="images/pixel.jpeg" alt="Product 4">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/iphone.jpg" alt="Movie 1">
+            <div class="product" id="product5">
+                <a href="product_details.html">
+                    <img src="images/iphone.jpg" alt="Product 5">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/pixel.jpeg" alt="Movie 1">
+            <div class="product" id="product6">
+                <a href="product_details.html">
+                    <img src="images/pixel.jpeg" alt="Product 6">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
         </div>
-        <h2 class="product-catagory">Watches</h2>
-
-        <div class="product-container">
-                 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+        <h2 id="watches-category" class="product-catagory">Watches</h2>
+        <div class="product-container" id="watches-container">
+            <!-- Product 1 -->
+            <div class="product" id="product7">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 1">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+            <div class="product" id="product8">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 2">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+            <div class="product" id="product9">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 3">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+            <div class="product" id="product10">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 4">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+            <div class="product" id="product11">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 5">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/watch.jpeg" alt="Movie 1">
+            <div class="product" id="product12">
+                <a href="product_details.html">
+                    <img src="images/watch.jpeg" alt="Product 6">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
         </div>
             
-        <h2 class="product-catagory">Air Pods</h2>
-
-        <div class="product-container">
-
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+        <!-- Air Pods Section -->
+        <h2 id="airpods-category" class="product-catagory">Air Pods</h2>
+        <div class="product-container" id="airpods-container">
+            <!-- Product 1 -->
+            <div class="product" id="product13">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 1">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+            <div class="product" id="product14">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 2">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+            <div class="product" id="product15">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 3">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+            <div class="product" id="product16">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 4">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+            <div class="product" id="product16">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 5">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
 
-            <div class="product">
-                <a href="booking.html">
-                    <img src="images/airpods.jpeg" alt="Movie 1">
+            <div class="product" id="product18">
+                <a href="product_details.html">
+                    <img src="images/airpods.jpeg" alt="Product 6">
                     <p class="product-name">Product Name</p>
-                    <p class="product-name">Product Price</p>
+                    <p class="product-price">Product Price</p>
                 </a>
             </div>
         </div>
