@@ -313,110 +313,106 @@ footer .copyright {
     text-align: left;
 }
 /*****************************************Index Page*********************************/
-/***********************************************Sign in******************************************/
+/***************************************************Sign Up*************************************/
 
-/* Sign-in form styles */
-#content {
+#signup-form {
+    width: 400px;
+    margin: 30px auto;
     padding: 20px;
-    flex-grow: 1;
-}
-
-#signin-form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #f5f5f5;
-    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.429);
-    margin-top: 100px;
-    margin-bottom: 100px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#signin-form h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+#signup-form h2 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-#signin-form form {
-    display: flex;
-    flex-direction: column;
+#signup-form .form-group {
+    margin-bottom: 15px;
 }
 
-#signin-form label {
+#signup-form label {
+    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-#signin-form input {
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+#signup-form input[type="text"],
+#signup-form input[type="email"],
+#signup-form input[type="password"],
+#signup-form input[type="tel"],
+#signup-form button {
+    width: 95%;
+    padding: 10px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#signin-form button {
-    padding: 10px;
+#signup-form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#signup-form button {
     background-color: black;
     color: white;
-    border: none;
-    border-radius: 3px;
     cursor: pointer;
-    font-size: 16px;
-    margin-left: 10px;
+    margin-top: 10px; /* Move the button 5px down */
+    margin-left: 10px; /* Move the button 5px to the right */
 }
 
-#signin-form button:hover {
-    background-color: rgba(0, 0, 0, 0.393);
+#signup-form button:hover {
+    background-color: rgba(0, 0, 0, 0.312);
 }
-
-#signin-form p {
-    margin-top: 10px;
-    text-align: center;
-}
-
-#signin-form p a {
-    color: blue;
-    text-decoration: none;
-}
-
-#signin-form p a:hover {
-    text-decoration: underline;
-}
-
-/* Style for the password input field and toggle icon */
-.password-input {
+#signup-form .password-input-signup {
     position: relative;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
 }
 
-.password-input input[type="password"] {
-    padding-right: 40px; /* Create space for the toggle icon */
+#signup-form .confirm-password-input {
+    position: relative;
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    background-color: #f9fbe7;
 }
 
-.password-toggle {
-position: absolute;
-top: 50%;
-right: 10px;
-transform: translateY(-50%);
-cursor: pointer;
-font-size: 18px;
+#signup-form .password-input i:empty {
+    display: none;
 }
 
-/* Style the toggle icon to show the eye symbol */
-.password-toggle.fa-eye::before {
-    content: "\f06e"; /* Eye icon (open eye) */
+#signup-form .checkbox-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
-/* Style the toggle icon to show the eye-slash symbol */
-.password-toggle.fa-eye-slash::before {
-    content: "\f070"; /* Eye-slash icon (closed eye) */
+#signup-form .checkbox-group .checkbox-label {
+    margin-bottom: 0;
+    margin-right: 5px;
 }
-.password-input input[type="password"] {
-    padding-right: 40px; /* Create space for the toggle icon */
-    width: 95%; /* Set the width to 100% to increase the width */
+
+#signup-form .checkbox-group input[type="checkbox"] {
+    order: 2;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
-/**************************************************Sign in**************************************/
+
+#signup-form .checkbox-group input[type="checkbox"]:checked {
+    background-color: black;
+}
+
+/********************************************************Sign Up***************************************/
 
     </style>
 <head>
@@ -457,6 +453,7 @@ font-size: 18px;
         </a>
     </div>
 
+    
 
     <div id="taskbar">
         <ul>
@@ -467,24 +464,40 @@ font-size: 18px;
             <li><a href="offer.html" class="nav-link">Offers</a></li>
         </ul>
     </div>
-
-
     <div id="content">
-        <div id="signin-form">
-            <h2>Sign In</h2>
-            <form action="signin.php" method="post">
-                <label for="email">Username or Email:</label>
+        <div id="signup-form">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 
+                <label for="confirmEmail">Confirm Email:</label>
+                <input type="email" id="confirmEmail" name="confirmEmail" required>
+
                 <label for="password">Password:</label>
                 <div class="password-input">
                     <input type="password" id="password" name="password" required>
                     <i class="fa-solid fa-eye password-toggle" onclick="togglePasswordVisibility('password')"></i>
                 </div>
-                
-                <button type="submit">Sign In</button>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <div class="password-input">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <i class="fa-solid fa-eye password-toggle" onclick="togglePasswordVisibility('confirmPassword')"></i>
+                </div>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+
+                <button type="submit">Register</button>
             </form>
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
         </div>
     </div>
 
@@ -531,6 +544,7 @@ font-size: 18px;
 
 
 <script>
+
     function togglePasswordVisibility(inputId) {
         const input = document.getElementById(inputId);
         const toggleIcon = input.nextElementSibling;
@@ -546,4 +560,5 @@ font-size: 18px;
         }
     }
 </script>
+
 </html>
