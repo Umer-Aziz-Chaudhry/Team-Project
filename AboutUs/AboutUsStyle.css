@@ -1,93 +1,222 @@
-/* Global Styles */
 body {
+    background-color: white;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-/* Header Styles */
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
+    overflow: auto;
+    }
+    
+    /* Styling for the scrollbar track */
+    body::-webkit-scrollbar {
+    width: 0; /* Set the width of the scrollbar */
+    }
+    
+    body::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the background color of the scrollbar track to transparent */
+    }
+    
+    /* Styling for the scrollbar thumb */
+    body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5); /* Set the color of the scrollbar thumb (semi-transparent white in this example) */
+    border-radius: 5px; /* Rounded corners for the thumb */
+    }
+    /******************************************Main Body*********************************/
+    
+    /********************************************Header**********************************/
+    
+    #header {
+    background-color: black;
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Header Left Styles */
-.header-left {
+    height: 80px;
+    align-items: center; /* Center the items vertically */
+    justify-content: space-between; /* Space elements evenly in the header */
+    }
+    
+    #header span {
+    display: flex;
+    align-items: center; /* Center the items vertically within the flex container */
+    color: white;
+    font-size: 16px;
+    
+    }
+    
+    /* Format each header text separately */ */
+    #title {
+    font-weight: bold; 
+    position: absolute;
+    left: 5%;
+    white-space: nowrap; /* Prevent line breaks */
+    }
+    #title i {
+    font-size: 60px;
+    }
+    
+    
+    .header-actions {
     display: flex;
     align-items: center;
-}
-
-.mobile-icon {
-    font-size: 48px;
-    margin-right: 10px;
-}
-
-/* Header Links Styles */
-.header-links {
+    margin-left: 50%;
+    }
+    
+    .header-action {
+    margin-left: 40%;
+    }
+    
+    
+    #search-bar {
     display: flex;
     align-items: center;
-}
-
-.header-links a {
-    color: #fff;
-    margin: 0 20px;
-    text-decoration: none;
-}
-
-.search-bar {
-    background-color: #fff;
+    margin-left: 57%; /* Adjust the spacing as needed */
+    position:absolute;
+    }
+    
+    #search-bar input {
     padding: 8px;
+    font-size: 16px;
+    margin-right: 5%;
+    }
+    
+    #search-bar button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 5px;
-    margin-right: 20px;
-}
-
-.cart-button {
-    background-color: #fff;
-    color: #000;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin-right: 20px;
-}
-
-/* Taskbar Styles */
-nav {
-    background-color: #94929276;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
+    }
+    
+    /* Add this style to the existing styles */
+    #cart {
+    display: flex;
+    align-items: center;
+    margin-right: 12%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    }
+    
+    #cart i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+    /* Add this style to the existing styles */
+    #wishlist {
+    display: flex;
+    align-items: center;
+    margin-left: 62%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    border-left: 1px solid white;
+    padding-left: 5px;
+    }
+    
+    #wishlist i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+    
+    #signin {
+    position: absolute;
+    left: 87%; /* Add some space between the icon and the text */
+    padding-left: 10px; /* Add some padding to the left of the sign-in text for better spacing */
+    }
+    
+    #signin i {
+    font-size: 24px;
+    }
+    /***************************************Header***************************************/
+    
+    /***************************************Taskbar**************************************/
+    
+    #taskbar {
+    background-color: #94929276; /* Change background color to orange */
+    padding: 10px 20px;
+    text-align: center;
+    }
+    
+    #taskbar ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-nav li {
-    display: inline;
-    margin: 0 20px;
-}
-
-nav a {
+    }
+    
+    #taskbar li {
+    display: inline-block;
+    margin-right: 20px;
+    }
+    
+    #taskbar li:last-child {
+    margin-right: 0;
+    }
+    
+    #taskbar a {
+    color: black;
     text-decoration: none;
-    color: #000;
-    font-weight: lighter;
-}
+    font-size: 16px;
+    padding: 8px;
+    }
+    
+    /* Style the active link */
+    #taskbar a.active {
+    background-color: #8988886d; /* Set the active background color here */
+    }
+    
+    #taskbar a:hover {
+    background-color: #5555556c;
+    }
+    /**************************************Taskbar*************************************/
+    
+    /***************************************Footer*************************************/
+    
+    footer {
+    background-color: black;
+    color: #b7b7b7;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    }
+    
+    footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Display the links in a vertical line */
+    }
+    
+    footer h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+    }
+    
+    footer a {
+    color: #b7b7b7;
+    text-decoration: none;
+    margin-bottom: 5px;
+    }
+    
+    /* Additional styles for the footer links */
+    footer a {
+    display: inline-block; /* Display the links in a row */
+    margin-right: 10px; /* Add some space between the links */
+    }
+    
+    /* Separate formatting for the copyright line */
+    footer .copyright {
+    flex: 1;
+    margin-top: 200px;
+    color: #fff;
+    position: absolute;
+    }
+    
+    /****************************************Footer**********************************/
 
 /* Content Container Styles */
 .content-container {
@@ -108,48 +237,24 @@ nav a {
 }
 
 .image-content img {
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 800px;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #000;
-    color: #fff;
+.content-box {
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.429);
+    padding: 20px; /* Adjust the padding as needed */
+    margin: 20px; /* Adjust the margin as needed */
+}
+#aboutus-form {
+    max-width: 1600px; /* Increase the width as needed */
+    margin: 0 auto;
+    background-color: #f5f5f5;
     padding: 20px;
-    text-align: center;
-    margin-top: auto;
-}
-
-/* Footer Columns Styles */
-.footer-columns {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.footer-column {
-    flex: 1;
-    max-width: 15%;
-    text-align: left;
-    padding: 10px;
-}
-
-.footer-column h3 {
-    color: #fff;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column li {
-    margin: 5px 0;
-}
-
-.footer-column a {
-    color: #fff;
-    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.429);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
