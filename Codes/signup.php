@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $userType = $_POST["userType"];
 
-    // Validate form data (you can add more validation here)
+    // Validate form data
     if ($email !== $confirmEmail) {
         echo "<script>swal('Error', 'Emails do not match', 'error').then(() => window.location.href='signup.php');</script>";
         exit;
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Connect to the database (change the credentials accordingly)
+    // Connect to the database
     $host = "localhost";
     $username = "u-230064687@localhost";
     $password = "UfWsjkbw4Ux0G1u";
@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Prepare and execute the SQL query to insert data into the database
     $sql = "INSERT INTO Users (email, password, first_name, last_name, user_type, phone_number)
             VALUES ('$email', '$password', '$firstName', '$lastName', '$userType', '$phone')";
 
@@ -45,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>swal('Error', 'An error occurred', 'error').then(() => window.location.href='signup.php');</script>";
     }
 
-    // Close the database connection
     mysqli_close($conn);
 }
 ?>
