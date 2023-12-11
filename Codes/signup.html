@@ -14,17 +14,17 @@
 
 /* Styling for the scrollbar track */
 body::-webkit-scrollbar {
-    width: 0; /* Set the width of the scrollbar */
+    width: 0;
 }
 
 body::-webkit-scrollbar-track {
-    background-color: transparent; /* Set the background color of the scrollbar track to transparent */
+    background-color: transparent;
 }
 
 /* Styling for the scrollbar thumb */
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.5); /* Set the color of the scrollbar thumb (semi-transparent white in this example) */
-    border-radius: 5px; /* Rounded corners for the thumb */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
 }
 /******************************************Main Body*********************************/
 
@@ -35,24 +35,23 @@ body::-webkit-scrollbar-thumb {
     padding: 10px 20px;
     display: flex;
     height: 80px;
-    align-items: center; /* Center the items vertically */
-    justify-content: space-between; /* Space elements evenly in the header */
+    align-items: center;
+    justify-content: space-between;
 }
 
 #header span {
     display: flex;
-    align-items: center; /* Center the items vertically within the flex container */
+    align-items: center;
     color: white;
     font-size: 16px;
 
 }
 
-/* Format each header text separately */ */
 #title {
     font-weight: bold; 
     position: absolute;
     left: 5%;
-    white-space: nowrap; /* Prevent line breaks */
+    white-space: nowrap;
 }
 #title i {
     font-size: 60px;
@@ -73,7 +72,7 @@ body::-webkit-scrollbar-thumb {
 #search-bar {
     display: flex;
     align-items: center;
-    margin-left: 57%; /* Adjust the spacing as needed */
+    margin-left: 57%;
     position:absolute;
 }
 
@@ -92,13 +91,12 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-/* Add this style to the existing styles */
 #cart {
     display: flex;
     align-items: center;
-    margin-right: 12%; /* Adjust the spacing as needed */
-    border-right: 1px solid white; /* Add a white border to the right of the cart button */
-    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    margin-right: 12%;
+    border-right: 1px solid white;
+    padding-right: 5px;
 }
 
 #cart i {
@@ -107,13 +105,12 @@ body::-webkit-scrollbar-thumb {
     margin-left: 8px;
 }
 
-/* Add this style to the existing styles */
 #wishlist {
     display: flex;
     align-items: center;
-    margin-left: 62%; /* Adjust the spacing as needed */
-    border-right: 1px solid white; /* Add a white border to the right of the cart button */
-    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    margin-left: 62%;
+    border-right: 1px solid white;
+    padding-right: 5px;
     border-left: 1px solid white;
     padding-left: 5px;
 }
@@ -127,8 +124,8 @@ body::-webkit-scrollbar-thumb {
 
 #signin {
     position: absolute;
-    left: 87%; /* Add some space between the icon and the text */
-    padding-left: 10px; /* Add some padding to the left of the sign-in text for better spacing */
+    left: 87%;
+    padding-left: 10px;
 }
 
 #signin i {
@@ -139,7 +136,7 @@ body::-webkit-scrollbar-thumb {
 /***************************************Taskbar**************************************/
 
 #taskbar {
-    background-color: #94929276; /* Change background color to orange */
+    background-color: #94929276;
     padding: 10px 20px;
     text-align: center;
 }
@@ -166,9 +163,8 @@ body::-webkit-scrollbar-thumb {
     padding: 8px;
 }
 
-/* Style the active link */
 #taskbar a.active {
-    background-color: #8988886d; /* Set the active background color here */
+    background-color: #8988886d;
 }
 
 #taskbar a:hover {
@@ -190,7 +186,7 @@ footer {
 footer div {
     flex: 1;
     display: flex;
-    flex-direction: column; /* Display the links in a vertical line */
+    flex-direction: column;
 }
 
 footer h4 {
@@ -207,11 +203,10 @@ footer a {
 
 /* Additional styles for the footer links */
 footer a {
-    display: inline-block; /* Display the links in a row */
-    margin-right: 10px; /* Add some space between the links */
+    display: inline-block;
+    margin-right: 10px;
 }
 
-/* Separate formatting for the copyright line */
 footer .copyright {
     flex: 1;
     margin-top: 200px;
@@ -225,7 +220,7 @@ footer .copyright {
 
 #content {
     padding: 20px;
-    flex-grow: 1; /* Allow the content to grow and push the footer to the bottom */
+    flex-grow: 1;
 }
 
 /* Slideshow Styles */
@@ -275,7 +270,7 @@ footer .copyright {
     font-weight: bold;
     color: black;
     margin-left: 50px;
-    margin-top: 20px; /* Add some space between the slideshow and the heading */
+    margin-top: 20px;
 }
 
 /* Additional styles for the movies section */
@@ -295,7 +290,7 @@ footer .copyright {
     max-width: 210px;
     height: 300px;
     border-radius: 3px;
-    border: 1px solid black; /* Add a 1px solid black border */
+    border: 1px solid black;
 }
 
 .product-name {
@@ -306,7 +301,7 @@ footer .copyright {
 
 .product-name a {
     text-decoration: none;
-    color: black; /* Adjust the color as per your design */
+    color: black;
 }
 
 .product-catagory {
@@ -360,8 +355,8 @@ footer .copyright {
     background-color: black;
     color: white;
     cursor: pointer;
-    margin-top: 10px; /* Move the button 5px down */
-    margin-left: 10px; /* Move the button 5px to the right */
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #signup-form button:hover {
@@ -435,13 +430,11 @@ footer .copyright {
         </div>
         
 
-        <!-- Add the wishlist icon and link -->
         <a href="#" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
             <i class="fas fa-heart"></i>
             &nbsp;&nbsp;
         </a>
 
-        <!-- Add the cart icon and link -->
         <a href="#" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
             <i class="fas fa-shopping-cart"></i>
             &nbsp;&nbsp;
