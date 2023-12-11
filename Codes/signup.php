@@ -9,41 +9,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
     $phone = $_POST["phone"];
-    $userType = $_POST["userType"];
 
-    // Validate form data
-    if ($email !== $confirmEmail) {
-        echo "<script>swal('Error', 'Emails do not match', 'error').then(() => window.location.href='signup.php');</script>";
+    if ($email !== $confirmEmail || $password !== $confirmPassword) {
+        echo "<script>alert('Error: Registration failed'); window.location.href='signup.php';</script>";
         exit;
     }
 
-    if ($password !== $confirmPassword) {
-        echo "<script>swal('Error', 'Passwords do not match', 'error').then(() => window.location.href='signup.php');</script>";
-        exit;
-    }
-
-    // Connect to the database
     $host = "localhost";
-    $username = "u-230064687@localhost";
+    $username = "u-230064687";
     $password = "UfWsjkbw4Ux0G1u";
-    $database = "u_230064687_db";
+    $dbname = "u_230064687_db";
 
-    $conn = mysqli_connect($host, $username, $password, $database);
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    try {
+        // Create connection
+        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO Users (email, password, first_name, last_name, user_type, phone_number)
-            VALUES ('$email', '$password', '$firstName', '$lastName', '$userType', '$phone')";
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if (mysqli_query($conn, $sql)) {
-        // Registration successful, redirect to payment page
-        echo "<script>swal('Success', 'Registration Successful', 'success').then(() => window.location.href='payment.html');</script>";
-    } else {
+        $sql = "INSERT INTO user (FirstName, LastName, Email, Password, Phone)
+                VALUES (:firstName, :lastName, :email, :hashedPassword, :phone)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':hashedPassword', $hashedPassword);
+        $stmt->bindParam(':phone', $phone);
+
+        $stmt->execute();
+
+        // Registration successful, redirect to login page
+        echo "<script>alert('Success: Registration Successful. You can now login to account. '); window.location.href='login.html';</script>";
+        exit;
+    } catch (PDOException $ex) {
         // Error occurred while inserting into the database
-        echo "<script>swal('Error', 'An error occurred', 'error').then(() => window.location.href='signup.php');</script>";
+        echo "<script>alert('Error: An error occurred'); window.location.href='signup.php';</script>";
+        exit;
+    } finally {
+        // Close the database connection
+        $conn = null;
     }
-
-    mysqli_close($conn);
 }
 ?>
