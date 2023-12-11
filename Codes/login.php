@@ -1,40 +1,47 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $servername = "localhost"; 
-  $dbUser = "u-230064687";      
-  $dbPassword = "UfWsjkbw4Ux0G1u";          
-  $dbName = "u_230064687_db";
+// VerifyUser.php
 
-  try {
-    $pdo = new PDO("mysql:host=$servername;dbname=$dbName", $dbUser, $dbPassword);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$host = 'localhost';
+$username = 'u-230064687';
+$password = 'UfWsjkbw4Ux0G1u';
+$database = 'u_230064687_db';
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+// Create a database connection
+$conn = new mysqli($host, $username, $password, $database);
 
-    $query = "SELECT * FROM Users WHERE email = :email AND password = :password";
-    $statement = $pdo->prepare($query);
-    $statement->bindParam(':email', $email);
-    $statement->bindParam(':password', $password);
-    $statement->execute();
-
-    if ($statement->rowCount() === 1) {
-      // Successful sign-in
-      echo '<script>
-              swal("Success", "You have successfully signed in", "success")
-                  .then(function () {
-                      window.location.href = "index.html";
-                  });
-            </script>';
-    } else {
-      // Invalid credentials
-      echo '<script>
-              swal("Error", "Invalid email or password", "error");
-            </script>';
-    }
-
-  } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-  }
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Get user input
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+$query = "SELECT * FROM user WHERE Email = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+
+    $user = $result->fetch_assoc();
+
+    // Verify the password
+    if (password_verify($password, $user['Password'])) {
+        echo "Login successful!";
+    } else {
+        // Password is incorrect
+        echo "Invalid password!";
+    }
+} else {
+    // User with the given email doesn't exist
+    echo "User not found!";
+}
+
+$stmt->close();
+$conn->close();
 ?>
