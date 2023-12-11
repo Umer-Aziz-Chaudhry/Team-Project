@@ -1,0 +1,325 @@
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    }
+    
+ 
+    body::-webkit-scrollbar {
+    width: 0; 
+    }
+    
+    body::-webkit-scrollbar-track {
+    background-color: transparent; 
+    }
+    
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px; 
+    }
+    /******************************************Main Body*********************************/
+    
+    /********************************************Header**********************************/
+    
+    #header {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    height: 80px;
+    align-items: center; 
+    justify-content: space-between; 
+    }
+    
+    #header span {
+    display: flex;
+    align-items: center; 
+    color: white;
+    font-size: 16px;
+    
+    }
+    
+   
+    #title {
+    font-weight: bold; 
+    position: absolute;
+    left: 5%;
+    white-space: nowrap; 
+    }
+    #title i {
+    font-size: 60px;
+    }
+    
+    
+    .header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+    }
+    
+    .header-action {
+    margin-left: 40%;
+    }
+    
+    
+    #search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 57%; 
+    position:absolute;
+    }
+    
+    #search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 5%;
+    }
+    
+    #search-bar button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+    
+    
+    #cart {
+    display: flex;
+    align-items: center;
+    margin-right: 12%; 
+    border-right: 1px solid white; 
+    padding-right: 5px; 
+    }
+    
+    #cart i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+   
+    #wishlist {
+    display: flex;
+    align-items: center;
+    margin-left: 62%; 
+    border-right: 1px solid white; 
+    padding-right: 5px; 
+    border-left: 1px solid white;
+    padding-left: 5px;
+    }
+    
+    #wishlist i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+    
+    #signin {
+    position: absolute;
+    left: 87%;
+    padding-left: 10px; 
+    }
+    
+    #signin i {
+    font-size: 24px;
+    }
+    /***************************************Header***************************************/
+    
+    /***************************************Taskbar**************************************/
+    
+    #taskbar {
+    background-color: #94929276; 
+    padding: 10px 20px;
+    text-align: center;
+    }
+    
+    #taskbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    #taskbar li {
+    display: inline-block;
+    margin-right: 20px;
+    }
+    
+    #taskbar li:last-child {
+    margin-right: 0;
+    }
+    
+    #taskbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    }
+    
+    
+    #taskbar a.active {
+    background-color: #8988886d; 
+    }
+    
+    #taskbar a:hover {
+    background-color: #5555556c;
+    }
+    /**************************************Taskbar*************************************/
+    
+    /***************************************Footer*************************************/
+    
+    footer {
+    background-color: black;
+    color: #b7b7b7;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    }
+    
+    footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    }
+    
+    footer h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+    }
+    
+    footer a {
+    color: #b7b7b7;
+    text-decoration: none;
+    margin-bottom: 5px;
+    }
+    
+    /* Additional styles for the footer links */
+    footer a {
+    display: inline-block; 
+    margin-right: 10px; 
+    }
+    
+    /* Separate formatting for the copyright line */
+    footer .copyright {
+    flex: 1;
+    margin-top: 200px;
+    color: #fff;
+    position: absolute;
+    }
+    
+    /****************************************Footer**********************************/
+
+/***********************************************Sign in******************************************/
+
+/* Sign-in form styles */
+#content {
+padding: 20px;
+flex-grow: 1;
+}
+
+#signin-form {
+max-width: 400px;
+margin: 0 auto;
+background-color: #f5f5f5;
+padding: 20px;
+border-radius: 3px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.429);
+margin-top: 100px;
+margin-bottom: 100px;
+}
+
+#signin-form h2 {
+font-size: 24px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+#signin-form form {
+display: flex;
+flex-direction: column;
+}
+
+#signin-form label {
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+#signin-form input {
+padding: 8px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 3px;
+font-size: 16px;
+}
+
+#signin-form button {
+padding: 10px;
+background-color: black;
+color: white;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+font-size: 16px;
+margin-left: 10px;
+}
+
+#signin-form button:hover {
+background-color: rgba(0, 0, 0, 0.393);
+}
+
+#signin-form p {
+margin-top: 10px;
+text-align: center;
+}
+
+#signin-form p a {
+color: blue;
+text-decoration: none;
+}
+
+#signin-form p a:hover {
+text-decoration: underline;
+}
+
+
+.password-input {
+position: relative;
+}
+
+.password-input input[type="password"] {
+padding-right: 40px; 
+}
+
+.password-toggle {
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+cursor: pointer;
+font-size: 18px;
+}
+
+
+.password-toggle.fa-eye::before {
+content: "\f06e"; 
+}
+
+
+.password-toggle.fa-eye-slash::before {
+content: "\f070"; 
+}
+.password-input input[type="password"] {
+padding-right: 40px; 
+width: 95%; 
+}
+/*************************************************Sign in**************************************/
