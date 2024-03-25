@@ -1,0 +1,156 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.header {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.navigation ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+}
+
+.navigation ul li a.active,
+.navigation ul li a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+
+.content {
+    padding: 40px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1000px;
+    flex-grow: 1;
+}
+
+.faq-section {
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h2 {
+    color: #333;
+    font-size: 18px;
+}
+
+.faq-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.footer-section h4,
+.footer-section a {
+    color: white;
+}
+
+.footer-section a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .footer {
+        justify-content: space-around;
+        align-items: flex-start;
+        position: static;
+    }
+
+    .footer-section {
+        align-items: flex-start;
+    }
+}
+
+
+.footer-bottom {
+    font-size: 0.75rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    order: 3;
+}
+
+@media (max-width: 767px) {
+    .footer-section {
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-bottom {
+        order: 3;
+        padding-top: 20px;
+    }
+}
