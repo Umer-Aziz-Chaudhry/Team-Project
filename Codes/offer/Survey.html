@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Survey.css">
+</head>
+<body>
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <i class="mobile-icon fa fa-mobile"></i>
+            &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
+        </div>
+
+        <a href="wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+    <header>
+        <h1 style="text-align: center;"> Survey</h1>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <section>
+                <h2>About Your Experience</h2>
+                <p>How satisfied are you with your recent shopping experience at our mobile shop?</p>
+                <label for="satisfaction">Satisfaction Level:</label>
+                <select name="satisfaction" id="satisfaction">
+                    <option value="very-satisfied">Very Satisfied</option>
+                    <option value="satisfied">Satisfied</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="dissatisfied">Dissatisfied</option>
+                    <option value="very-dissatisfied">Very Dissatisfied</option>
+                </select>
+            </section>
+            <section>
+                <h2>Product Feedback</h2>
+                <p>Please rate the following aspects of our products:</p>
+                <div class="feedback-option">
+                    <label for="quality">Quality:</label>
+                    <div class="rating">
+                        <input type="radio" id="quality-1" name="quality" value="1">
+                        <label for="quality-1">1</label>
+                        <input type="radio" id="quality-2" name="quality" value="2">
+                        <label for="quality-2">2</label>
+                        <input type="radio" id="quality-3" name="quality" value="3">
+                        <label for="quality-3">3</label>
+                        <input type="radio" id="quality-4" name="quality" value="4">
+                        <label for="quality-4">4</label>
+                        <input type="radio" id="quality-5" name="quality" value="5">
+                        <label for="quality-5">5</label>
+                    </div>
+                </div>
+                <div class="feedback-option">
+                    <label for="features">Features:</label>
+                    <div class="rating">
+                        <input type="radio" id="features-1" name="features" value="1">
+                        <label for="features-1">1</label>
+                        <input type="radio" id="features-2" name="features" value="2">
+                        <label for="features-2">2</label>
+                        <input type="radio" id="features-3" name="features" value="3">
+                        <label for="features-3">3</label>
+                        <input type="radio" id="features-4" name="features" value="4">
+                        <label for="features-4">4</label>
+                        <input type="radio" id="features-5" name="features" value="5">
+                        <label for="features-5">5</label>
+                    </div>
+                </div>
+                <div class="feedback-option">
+                    <label for="price">Price:</label>
+                    <div class="rating">
+                        <input type="radio" id="price-1" name="price" value="1">
+                        <label for="price-1">1</label>
+                        <input type="radio" id="price-2" name="price" value="2">
+                        <label for="price-2">2</label>
+                        <input type="radio" id="price-3" name="price" value="3">
+                        <label for="price-3">3</label>
+                        <input type="radio" id="price-4" name="price" value="4">
+                        <label for="price-4">4</label>
+                        <input type="radio" id="price-5" name="price" value="5">
+                        <label for="price-5">5</label>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Additional Comments</h2>
+                <p>Do you have any additional comments or suggestions for us?</p>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </section>
+
+            <button type="submit">Submit</button>
+        </form>
+        <footer>
+            <div>
+                <h4>Social</h4>
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+                <a>TikTok</a>
+                <a>Youtube</a>
+                <a>Whatsapp</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a>Privacy Policy</a>
+                <a>Terms of Service</a>
+                <a>Partners</a>
+                <a>Admittance Procedure</a>
+                <a >Persoonal Information</a>
+                <a>Advertise</a>
+            </div>
+            <div>
+                <h4>Events</h4>
+                <a>Groups and Events</a>
+                <a>Private Watch Party</a>
+                <a>Theatre</a>
+                <a>Birthday Parties</a>
+                <a>Film Festivals</a>
+                <a>IMAX Educational Screenings</a>
+            </div>
+                <div>
+                    <h4>Contact Us</h4> 
+                    <p>Email: info@cinema.com</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Address: Aston, Birmingham</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+                </div>
+            </footer>
+    </body>
+    </main>
+

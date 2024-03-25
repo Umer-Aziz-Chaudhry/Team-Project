@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" type="text/css" href="Checkout.css">
+</head>
+<body>
+        <form onsubmit="goToPaymentPage()">
+        <!-- Delivery Information -->
+        <h2>Delivery Information</h2>
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <h2>Billing Address</h2>
+        <label for="billing address">Address:</label>
+        <textarea id="billing address" name="address" rows="4" required></textarea>
+
+        <h2>Payment Details</h2>
+
+        <!-- Cardholder Name -->
+        <label for="cardholder_name">Cardholder Name:</label>
+        <input type="text" id="cardholder_name" name="cardholder_name" placeholder="John Doe" required>
+
+        <!-- Card Number -->
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required>
+
+        <!-- Expiry Date -->
+        <div style="display: flex;">
+            <div style="flex: 1; margin-right: 10px;">
+                <label for="expiry_month">Expiry Month:</label>
+                <input type="text" id="expiry_month" name="expiry_month" placeholder="MM" required maxlength="2">
+            </div>
+            <div style="flex: 1;">
+                <label for="expiry_year">Expiry Year:</label>
+                <input type="text" id="expiry_year" name="expiry_year" placeholder="YYYY" required maxlength="4">
+            </div>
+        </div>
+
+        <!-- CVV -->
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="3">
+
+        <button type="submit">Complete Purchase</button>
+    </form>
+</body>
+<script>
+    function goToPaymentPage() {
+
+        event.preventDefault();
+
+        window.location.href = 'payment.html';
+    }
+</script>
+</html>

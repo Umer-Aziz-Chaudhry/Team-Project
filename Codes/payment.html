@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Processing Payment...</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="loader"></div>
+    <h2>Processing Payment...</h2>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        // Function to show SweetAlert and hide the loader
+        setTimeout(function() {
+            // Hide the loader
+            document.querySelector('.loader').classList.add('hidden');
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Payment Approved!',
+                text: 'Thank you for your payment.',
+                confirmButtonText: 'View Invoice',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to the invoice page or any other desired page
+                    window.location.href = 'invoice.html';
+                }
+            });
+        }, 5000); // 5000 milliseconds (5 seconds)
+    </script>
+</body>
+</html>

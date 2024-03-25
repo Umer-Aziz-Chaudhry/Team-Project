@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CustomerReview.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <img id="logo" src="../media/Logo.png" alt="MobileWave" style="height: 90px;">
+                &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
+        </div>
+
+        <a href="../wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="../Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="../login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+
+    <div id="taskbar">
+        <ul>
+            <li><a href="../index.php" class="nav-link">Home</a></li>
+            <li><a href="../AboutsUS.html" class="nav-link">About Us</a></li>
+            <li><a href="../Catalog.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="../ContactUs.html" class="nav-link">Contact US</a></li>
+            <li><a href="offer/offer.html" class="nav-link">Offers</a></li>
+
+            
+        </ul>
+    </div>
+
+    <main class="Customer-review">
+       
+        
+        <section class="text-content">
+            <div id="Customers-OnReview">
+                <h2>Customer1-David Benson</h2>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <p>Hi my name is David benson and is this remarkably one of the best shops and I am satisfied with my product Iphone12 and it has all the tools that I have expected and I'm pleased with MobileWave.</p>
+            </div>
+
+            <div id="Customers-OnReview">
+                <h2>Customer2-Henry Ralph</h2>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <p>I'm Henry Ralph and I love Mobilewave it has perfect sales, as well as discount, the product which I got was the watch was what I was intriguted and it's professional meaning if a problem goes wrong, it can be resolved and I will be willingly to buy another product in the near future.</p>
+            </div>
+            <div id="Customers-OnReview">
+                <h2>Customer3</h2>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <p>Hi i am Ali Hussien and I am greatful for MobileWave and everything is made ease and I'm happy to save up money to buy products without regrets.</p>
+            </div>
+
+            <div id="Customers-OnReview">
+                <h2>Customer4</h2>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <span class = "fa fa-star  fa-1x checked"></span>
+                <p>I'm Khalid khan and I brought Huwai recently and I absouletly delighted and Mobilewave has a great sales and deals.</p>
+            </div>
+        </section>
+    </main>
+    <main class="customer-form-container">
+        <section class="form-content">
+            <h2>About Your Experience</h2>
+        <form action="#" method="post">
+            <section>
+                <p>How satisfied are you with your recent shopping experience at our mobile shop?</p>
+                <label for="satisfaction">Satisfaction Level:</label>
+                <select name="satisfaction" id="satisfaction">
+                    <option value="very-satisfied">Very Satisfied</option>
+                    <option value="satisfied">Satisfied</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="dissatisfied">Dissatisfied</option>
+                    <option value="very-dissatisfied">Very Dissatisfied</option>
+                </select>
+            </section>
+            <section>
+                <h2>Product Feedback</h2>
+                <p>Please rate the following aspects of our products:</p>
+                <div class="feedback-option">
+                    <label for="quality">Quality:</label>
+                    <div class="rating">
+                        <input type="radio" id="quality-1" name="quality" value="1">
+                        <label for="quality-1">1</label>
+                        <input type="radio" id="quality-2" name="quality" value="2">
+                        <label for="quality-2">2</label>
+                        <input type="radio" id="quality-3" name="quality" value="3">
+                        <label for="quality-3">3</label>
+                        <input type="radio" id="quality-4" name="quality" value="4">
+                        <label for="quality-4">4</label>
+                        <input type="radio" id="quality-5" name="quality" value="5">
+                        <label for="quality-5">5</label>
+                    </div>
+                </div>
+
+                <div class="feedback-option">
+                    <label for="features">Features:</label>
+                    <div class="rating">
+                        <input type="radio" id="features-1" name="features" value="1">
+                        <label for="features-1">1</label>
+                        <input type="radio" id="features-2" name="features" value="2">
+                        <label for="features-2">2</label>
+                        <input type="radio" id="features-3" name="features" value="3">
+                        <label for="features-3">3</label>
+                        <input type="radio" id="features-4" name="features" value="4">
+                        <label for="features-4">4</label>
+                        <input type="radio" id="features-5" name="features" value="5">
+                        <label for="features-5">5</label>
+                    </div>
+                </div>
+                <div class="feedback-option">
+                    <label for="price">Price:</label>
+                    <div class="rating">
+                        <input type="radio" id="price-1" name="price" value="1">
+                        <label for="price-1">1</label>
+                        <input type="radio" id="price-2" name="price" value="2">
+                        <label for="price-2">2</label>
+                        <input type="radio" id="price-3" name="price" value="3">
+                        <label for="price-3">3</label>
+                        <input type="radio" id="price-4" name="price" value="4">
+                        <label for="price-4">4</label>
+                        <input type="radio" id="price-5" name="price" value="5">
+                        <label for="price-5">5</label>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Additional Comments</h2>
+                <p>Do you have any additional comments or suggestions for us?</p>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+            </section>
+
+            <button type="submit">Submit</button>
+        </form>
+        
+        <section class="image-content">
+            <img src="media/CustomerReview.png" alt="Our Team">
+        </section>
+    </section>
+    </main>
+    <footer>
+        <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Facebook</a>
+                <a href="https://twitter.com/Mobile__Wave">Twitter</a>
+                <a href="https://www.instagram.com/mobile___wave/">Instagram</a>
+                <a href="https://www.tiktok.com/@mobile__wave">TikTok</a>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Youtube</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="../ADVS/privacy.html">Privacy Policy</a>
+                <a href="../ADVS/terms.html">Terms of Service</a>
+                <a href="../ADVS/adverties.html">Adversite</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4> 
+                <a href="../ADVS/faq.html">FAQ</a>
+                <a href="../ContactUs.html">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
+
+

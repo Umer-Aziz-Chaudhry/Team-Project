@@ -1,0 +1,369 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+/* Styling for the scrollbar track */
+body::-webkit-scrollbar {
+    width: 0; /* Set the width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the background color of the scrollbar track to transparent */
+}
+
+/* Styling for the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5); /* Set the color of the scrollbar thumb (semi-transparent white in this example) */
+    border-radius: 5px; /* Rounded corners for the thumb */
+}
+/******************************************Main Body*********************************/
+
+/********************************************Header**********************************/
+
+#header {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    height: 80px;
+    align-items: center; /* Center the items vertically */
+    justify-content: space-between; /* Space elements evenly in the header */
+}
+
+#header span {
+    display: flex;
+    align-items: center; /* Center the items vertically within the flex container */
+    color: white;
+    font-size: 16px;
+
+}
+
+/* Format each header text separately */ */
+#title {
+    font-weight: bold; 
+    position: absolute;
+    left: 5%;
+    white-space: nowrap; /* Prevent line breaks */
+}
+#title i {
+    font-size: 60px;
+}
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+}
+
+.header-action {
+    margin-left: 40%;
+}
+
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 57%; /* Adjust the spacing as needed */
+    position:absolute;
+}
+
+#search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 5%;
+}
+
+#search-bar button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Add this style to the existing styles */
+#cart {
+    display: flex;
+    align-items: center;
+    margin-right: 12%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+}
+
+#cart i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+/* Add this style to the existing styles */
+#wishlist {
+    display: flex;
+    align-items: center;
+    margin-left: 62%; /* Adjust the spacing as needed */
+    border-right: 1px solid white; /* Add a white border to the right of the cart button */
+    padding-right: 5px; /* Add some padding to the right of the border for better spacing */
+    border-left: 1px solid white;
+    padding-left: 5px;
+}
+
+#wishlist i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+
+#signin {
+    position: absolute;
+    left: 87%; /* Add some space between the icon and the text */
+    padding-left: 10px; /* Add some padding to the left of the sign-in text for better spacing */
+}
+
+#signin i {
+    font-size: 24px;
+}
+/***************************************Header***************************************/
+
+/***************************************Taskbar**************************************/
+
+#taskbar {
+    background-color: #94929276; /* Change background color to orange */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#taskbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#taskbar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#taskbar li:last-child {
+    margin-right: 0;
+}
+
+#taskbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+}
+
+/* Style the active link */
+#taskbar a.active {
+    background-color: #8988886d; /* Set the active background color here */
+}
+
+#taskbar a:hover {
+    background-color: #5555556c;
+}
+/**************************************Taskbar*************************************/
+
+/***************************************Footer*************************************/
+
+footer {
+    background-color: black;
+    color: #b7b7b7;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Display the links in a vertical line */
+}
+
+footer h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+footer a {
+    color: #b7b7b7;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+/* Additional styles for the footer links */
+footer a {
+    display: inline-block; /* Display the links in a row */
+    margin-right: 10px; /* Add some space between the links */
+}
+
+footer .copyright {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; 
+    width: 100%; 
+}
+
+/****************************************Footer**********************************/
+
+
+/***********************************************Sign in******************************************/
+
+/* Sign-in form styles */
+#content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+#signin-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.429);
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#signin-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#signin-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+#signin-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#signin-form input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+#signin-form button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#signin-form button:hover {
+    background-color: rgba(0, 0, 0, 0.393);
+}
+
+#signin-form p {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#signin-form p a {
+    color: blue;
+    text-decoration: none;
+}
+
+#signin-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the password input field and toggle icon */
+.password-input {
+    position: relative;
+}
+
+.password-input input[type="password"] {
+    padding-right: 40px; /* Create space for the toggle icon */
+}
+
+.password-toggle {
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+cursor: pointer;
+font-size: 18px;
+}
+
+/* Style the toggle icon to show the eye symbol */
+.password-toggle.fa-eye::before {
+    content: "\f06e"; /* Eye icon (open eye) */
+}
+
+/* Style the toggle icon to show the eye-slash symbol */
+.password-toggle.fa-eye-slash::before {
+    content: "\f070"; /* Eye-slash icon (closed eye) */
+}
+.password-input input[type="password"] {
+    padding-right: 40px; /* Create space for the toggle icon */
+    width: 95%; /* Set the width to 100% to increase the width */
+}
+
+#login-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-login p {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.admin-login button {
+    background-color: green;
+}
+
+/**************************************************Sign in**************************************/

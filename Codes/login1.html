@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <img id="logo" src="media/Logo.png" alt="MobileWave" style="height: 90px;">
+                &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
+        <a href="wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;
+        </a>
+        <a href="Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+
+    </div>
+    <div id="taskbar">
+        <ul>
+            <li><a href="index.php" class="nav-link">Home</a></li>
+            <li><a href="AboutsUS.html" class="nav-link">About Us</a></li>
+            <li><a href="Catalog.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact US</a></li>
+            <li><a href="offer.html" class="nav-link">Offers</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="signin-form">
+            <h2>Sign In</h2>
+            <form action="login1.php" method="post">
+
+                <label for="email">Username or Email:</label>
+                <input type="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <div class="password-input">
+                    <input type="password" name="password" required>
+                    <i class="fa-solid fa-eye password-toggle" onclick="togglePasswordVisibility('password')"></i>
+                </div>
+
+                <button type="submit" value="Sign-In">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Facebook</a>
+                <a href="https://twitter.com/Mobile__Wave">Twitter</a>
+                <a href="https://www.instagram.com/mobile___wave/">Instagram</a>
+                <a href="https://www.tiktok.com/@mobile__wave">TikTok</a>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Youtube</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="ADVS/privacy.html">Privacy Policy</a>
+                <a href="ADVS/terms.html">Terms of Service</a>
+                <a href="ADVS/adverties.html">Adversite</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4> 
+                <a href="ADVS/faq.html">FAQ</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+            </div>
+        </footer>
+
+    <script>
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            const toggleIcon = input.nextElementSibling;
+
+            if (input.type === "password") {
+                input.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+
+</html>

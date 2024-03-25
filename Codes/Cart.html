@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+#cart-page-container {
+display: flex;
+flex-direction: column;
+}
+
+#cart-items-container {
+background-color: #f7f7f7;
+padding: 20px;
+border-radius: 4px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+
+}
+.cart-item {
+display: flex;
+align-items: center;
+border-bottom: 1px solid #e1e1e1;
+padding-bottom: 20px;
+margin-bottom: 20px;
+}
+
+.cart-item:last-child {
+border-bottom: none;
+}
+
+.cart-item p {
+margin: 0;
+color: #333;
+font-size: 18px; 
+}
+
+.cart-item img {
+width: 120px; 
+margin-right: 20px;
+}
+
+
+#cart-items-container button {
+background-color: #ff3b30;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+margin-left: auto; 
+}
+
+#checkout-box {
+background-color: #ffffff;
+padding: 20px;
+border-radius: 4px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-top: 20px; 
+}
+#checkout-box h3 {
+margin-top: 0;
+}
+
+#subtotal {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+font-size: 18px;
+}
+
+#checkout-button {
+background-color: black;
+color: white;
+border: none;
+padding: 15px 30px;
+font-size: 18px;
+cursor: pointer;
+display: block;
+width: 100%;
+border-radius: 4px;
+margin-top: 20px;
+text-align: center;
+}
+
+#checkout-button:hover {
+background-color: rgba(0, 0, 0, 0.497);
+}
+.item-name {
+    margin-bottom: 10px; 
+    margin-left: 10px;
+    display: block;
+    font-size: 18px; 
+    font-weight: bold;
+}
+.item-price {
+    margin-bottom: 10px; 
+    margin-left: 10px;
+    display: block;
+    font-size: 18px; 
+    font-weight: bold;
+}
+</style>
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <img id="logo" src="media/Logo.png" alt="MobileWave" style="height: 90px;">
+                &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
+        </div>
+
+
+        <!-- Add the wishlist icon and link -->
+        <a href="wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <!-- Add the cart icon and link -->
+        <a href="Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+
+    <div id="taskbar">
+        <ul>
+            <li><a href="index.php" class="nav-link">Home</a></li>
+            <li><a href="AboutsUS.html" class="nav-link">About Us</a></li>
+            <li><a href="Catalog.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="ContactUs.html" class="nav-link">Contact US</a></li>
+            <li><a href="offer.html" class="nav-link">Offers</a></li>
+        </ul>
+    </div>
+
+    <div id="cart-page-container">
+        <h2>Your Shopping Cart</h2>
+        <div id="cart-items-container"></div>
+        <div id="checkout-box">
+            <h3>Order Summary</h3>
+            <div id="subtotal">
+                <span>Subtotal (1 item):</span>
+                <span>£28.41</span>
+            </div>
+            <button id="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Facebook</a>
+                <a href="https://twitter.com/Mobile__Wave">Twitter</a>
+                <a href="https://www.instagram.com/mobile___wave/">Instagram</a>
+                <a href="https://www.tiktok.com/@mobile__wave">TikTok</a>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Youtube</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="ADVS/privacy.html">Privacy Policy</a>
+                <a href="ADVS/terms.html">Terms of Service</a>
+                <a href="ADVS/adverties.html">Adversite</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4> 
+                <a href="ADVS/faq.html">FAQ</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+<script>
+    // Function to check if the user is logged in
+    function isLoggedIn() {
+        // Replace this with your actual authentication check logic
+        // For demonstration purposes, using a simple flag
+        return localStorage.getItem('loggedIn') === 'true';
+    }
+
+    // Function to handle the checkout button click
+    function handleCheckout() {
+    if (isLoggedIn()) {
+        // User is logged in, proceed to checkout
+        window.location.href = 'checkout.html'; // Replace with your actual checkout page URL
+    } else {
+        // User is not logged in, show SweetAlert with "Guest Checkout" and "OK" options
+        Swal.fire({
+            title: 'Sign In Required',
+            text: 'You need to sign in first to proceed to checkout.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'OK', 
+            cancelButtonText: 'Guest Checkout',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // User pressed "OK," redirect to the login page
+                window.location.href = 'login1.html'; // Replace with your actual login page URL
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                // User pressed "Guest Checkout," redirect to the checkout page
+                window.location.href = 'checkout.html'; // 
+            }
+        });
+    }
+}
+
+    // Attach the handleCheckout function to the click event of the checkout button
+    document.getElementById('checkout-button').addEventListener('click', handleCheckout);
+
+
+// Function to load and display cart items
+function loadCartItems() {
+    var cartItemsContainer = document.getElementById('cart-items-container');
+    var subtotalContainer = document.getElementById('subtotal');
+    var checkoutButton = document.getElementById('checkout-button');
+
+    // Remove existing content in the containers
+    cartItemsContainer.innerHTML = '';
+    subtotalContainer.innerHTML = '';
+
+    // Get existing cart from local storage
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Initialize variables for subtotal calculation
+    var totalItems = 0;
+    var totalPrice = 0;
+
+    // Check if the cart is not empty
+    if (cart.length > 0) {
+        // Loop through each item in the cart
+        cart.forEach(function (item, index) {
+            // Update subtotal variables
+            totalItems += 1;
+            totalPrice += parseFloat(item.price);
+
+            var cartItemDiv = document.createElement('div');
+            cartItemDiv.className = 'cart-item';
+
+            var itemName = document.createElement('div');
+            itemName.innerHTML = '<p>Product: ' + item.name + '</p>';
+            itemName.className = 'item-name';
+
+            var itemPrice = document.createElement('div');
+            itemPrice.innerHTML = '<p>Price: $' + item.price + '</p>';
+            itemPrice.className = 'item-price';
+
+            var itemImage = document.createElement('img');
+            itemImage.src = item.image;
+            itemImage.alt = item.name;
+
+            var removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function () {
+                removeItem(index);
+            });
+
+            // Append elements to the cart item div
+            cartItemDiv.appendChild(itemImage);
+            cartItemDiv.appendChild(itemName);
+            cartItemDiv.appendChild(itemPrice);
+            cartItemDiv.appendChild(removeButton);
+
+            // Append the cart item div to the container
+            cartItemsContainer.appendChild(cartItemDiv);
+        });
+
+        // Display the subtotal
+        subtotalContainer.innerHTML = '<span>Subtotal (' + totalItems + ' item):</span><span>$' + totalPrice.toFixed(2) + '</span>';
+
+        // Enable the checkout button
+        checkoutButton.disabled = false;
+    } else {
+        // Display a message if the cart is empty
+        cartItemsContainer.innerHTML = '<p style="font-size: 24px; text-align: center;">Your cart is empty</p>';
+        subtotalContainer.innerHTML = ''; // Clear subtotal if cart is empty
+
+        // Disable the checkout button
+        checkoutButton.disabled = true;
+    }
+}
+    // Function to remove an item from the cart and update local storage
+    function removeItem(index) {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Remove the item at the specified index
+        cart.splice(index, 1);
+
+        // Save the updated cart back to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Reload the cart items
+        loadCartItems();
+    }
+
+    // Call the function to load and display cart items when the page loads
+    loadCartItems();
+</script>
+</html>

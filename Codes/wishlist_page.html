@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Add this to your CSS */
+.wishlist-dot {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+    </style>
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <i class="mobile-icon fa fa-mobile"></i>
+            &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
+        </div>
+
+        <a href="wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;<span class="wishlist-dot"></span>
+        </a>
+
+        <a href="Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+
+
+    <div id="taskbar">
+        <ul>
+            <li><a href="index.php" class="nav-link active">Home</a></li>
+            <li><a href="AboutUS.html" class="nav-link">About Us</a></li>
+            <li><a href="product.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="contact.html" class="nav-link">Contact US</a></li>
+            <li><a href="offer.html" class="nav-link">Offers</a></li>
+        </ul>
+    </div>
+
+    <div id="wishlist-content"></div>
+
+
+    <footer>
+        <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Facebook</a>
+                <a href="https://twitter.com/Mobile__Wave">Twitter</a>
+                <a href="https://www.instagram.com/mobile___wave/">Instagram</a>
+                <a href="https://www.tiktok.com/@mobile__wave">TikTok</a>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Youtube</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="ADVS/privacy.html">Privacy Policy</a>
+                <a href="ADVS/terms.html">Terms of Service</a>
+                <a href="ADVS/adverties.html">Adversite</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4> 
+                <a href="ADVS/faq.html">FAQ</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+            </div>
+        </footer>
+
+</body>
+
+
+<script src="wishlist.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+     
+     var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+ 
+     
+     var wishlistContent = document.getElementById('wishlist-content');
+     wishlist.forEach(function (item, index) {
+         var listItem = document.createElement('div');
+         listItem.innerHTML = `
+             <div>
+                 <span style="font-weight: bold; font-size: 16px;">${index + 1}. </span>
+                 <img src="${item.image}" alt="${item.name}" style="max-width: 100%; max-height: 200px;">
+                 <h2>${item.name}</h2>
+                 <button onclick="removeFromWishlist(${index})">Remove</button>
+             </div>
+             <hr style="margin: 10px 0;"> <!-- Separating line -->
+         `;
+         wishlistContent.appendChild(listItem);
+     });
+ });
+ 
+ 
+ function removeFromWishlist(index) {
+     var wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+     wishlist.splice(index, 1);
+     localStorage.setItem('wishlist', JSON.stringify(wishlist));
+ 
+     
+     var wishlistContent = document.getElementById('wishlist-content');
+     wishlistContent.innerHTML = ''; 
+     wishlist.forEach(function (item, newIndex) {
+         var listItem = document.createElement('div');
+         listItem.innerHTML = `
+             <div>
+                 <span style="font-weight: bold; font-size: 16px;">${newIndex + 1}. </span>
+                 <img src="${item.image}" alt="${item.name}" style="max-width: 100%; max-height: 200px;">
+                 <h2>${item.name}</h2>
+                 <button onclick="removeFromWishlist(${newIndex})">Remove</button>
+             </div>
+             <hr style="margin: 10px 0;"> <!-- Separating line -->
+         `;
+         wishlistContent.appendChild(listItem);
+     });
+ }
+</script>
+
+</html>

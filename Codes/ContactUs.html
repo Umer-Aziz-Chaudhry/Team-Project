@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mobile Wave</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/227527f8c4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <span id="title" style="font-size: 36px;">
+            <img id="logo" src="media/Logo.png" alt="MobileWave" style="height: 90px;">
+                &nbsp;&nbsp;MobileWave
+        </span>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button type="button" onclick="searchItem()">Search</button>
+        </div>
+        <a href="wishlist_page.html" id="wishlist" style="font-size: 18px; text-decoration: none; color: red;">
+            <i class="fas fa-heart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="Cart.html" id="cart" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fas fa-shopping-cart"></i>
+            &nbsp;&nbsp;
+        </a>
+
+        <a href="login.html" id="signin" style="font-size: 18px; text-decoration: none; color: white;">
+            <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+            &nbsp;&nbsp;Sign In / Join Now
+        </a>
+    </div>
+
+    <div id="taskbar">
+        <ul>
+            <li><a href="index.php" class="nav-link">Home</a></li>
+            <li><a href="AboutsUS.html" class="nav-link">About Us</a></li>
+            <li><a href="Catalog.html" class="nav-link">Product Catalog</a></li>
+            <li><a href="ContactUs.html" class="nav-link active">Contact US</a></li>
+            <li><a href="offer/offer.html" class="nav-link">Offers</a></li>
+        </ul>
+    </div>
+
+    <div id="contact-form-container">
+        Note: If you have any query regarding product, please fill in the form.
+    </div>
+
+    <div id="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="button" id="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <div>
+                <h4>Follow Us</h4>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Facebook</a>
+                <a href="https://twitter.com/Mobile__Wave">Twitter</a>
+                <a href="https://www.instagram.com/mobile___wave/">Instagram</a>
+                <a href="https://www.tiktok.com/@mobile__wave">TikTok</a>
+                <a href="https://www.youtube.com/channel/UCmxf0BNKQn5jppy4XpfWl8Q">Youtube</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="ADVS/privacy.html">Privacy Policy</a>
+                <a href="ADVS/terms.html">Terms of Service</a>
+                <a href="ADVS/adverties.html">Adversite</a>
+            </div>
+            <div>
+                <h4>Contact Us</h4> 
+                <a href="ADVS/faq.html">FAQ</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Mobile Wave. All rights reserved.</p>
+            </div>
+        </footer>
+
+</body>
+
+<script>
+    // Trigger the email sending when the submit button is clicked
+    document.getElementById('submit-btn').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+
+        var nameInput = document.getElementById('name');
+        var emailInput = document.getElementById('email');
+        var subjectInput = document.getElementById('subject');
+        var messageInput = document.getElementById('message');
+
+
+        var name = nameInput.value;
+        var email = emailInput.value;
+        var subject = subjectInput.value;
+        var message = messageInput.value;
+
+
+        if (name.trim() === '') {
+            alert('Please enter your name.');
+            nameInput.focus();
+            return;
+        }
+
+        if (email.trim() === '') {
+            alert('Please enter your email address.');
+            emailInput.focus();
+            return;
+        }
+
+        // Regular expression for email validation
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            emailInput.focus();
+            return;
+        }
+
+        if (message.trim() === '') {
+            alert('Please enter your message.');
+            messageInput.focus();
+            return;
+        }
+
+        // Create a mailto link with the form data
+        var mailtoLink = 'mailto:umerazizchaudhry@gmail.com' +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message)
+
+        // Open a new window or tab with the mailto link
+        window.open(mailtoLink, '_blank');
+    });
+</script>
+
+</html>
