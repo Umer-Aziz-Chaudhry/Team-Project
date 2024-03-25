@@ -1,0 +1,289 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    }
+    
+ 
+    body::-webkit-scrollbar {
+    width: 0; 
+    }
+    
+    body::-webkit-scrollbar-track {
+    background-color: transparent; 
+    }
+    
+    
+    body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px; 
+    }
+    /***************Main Body************/
+    
+    /***************Header***********/
+    
+    #header {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    height: 80px;
+    align-items: center; 
+    justify-content: space-between; 
+    }
+    
+    #header span {
+    display: flex;
+    align-items: center; 
+    color: white;
+    font-size: 16px;
+    
+    }
+    
+   
+    #title {
+    font-weight: bold; 
+    position: absolute;
+    left: 5%;
+    white-space: nowrap; 
+    }
+    #title i {
+    font-size: 60px;
+    }
+    
+    
+    .header-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+    }
+    
+    .header-action {
+    margin-left: 40%;
+    }
+    
+    
+    #search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 57%; 
+    position:absolute;
+    }
+    
+    #search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 5%;
+    }
+    
+    #search-bar button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    }
+    
+    
+    #cart {
+    display: flex;
+    align-items: center;
+    margin-right: 12%; 
+    border-right: 1px solid white; 
+    padding-right: 5px; 
+    }
+    
+    #cart i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+   
+    #wishlist {
+    display: flex;
+    align-items: center;
+    margin-left: 62%; 
+    border-right: 1px solid white; 
+    padding-right: 5px; 
+    border-left: 1px solid white;
+    padding-left: 5px;
+    }
+    
+    #wishlist i {
+    font-size: 24px;
+    margin-right: 5px;
+    margin-left: 8px;
+    }
+    
+    
+    #signin {
+    position: absolute;
+    left: 87%;
+    padding-left: 10px; 
+    }
+    
+    #signin i {
+    font-size: 24px;
+    }
+    /**************Header**************/
+    
+    /**************Taskbar*************/
+    
+    #taskbar {
+    background-color: #94929276; 
+    padding: 10px 20px;
+    text-align: center;
+    }
+    
+    #taskbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    #taskbar li {
+    display: inline-block;
+    margin-right: 20px;
+    }
+    
+    #taskbar li:last-child {
+    margin-right: 0;
+    }
+    
+    #taskbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    }
+    
+    
+    #taskbar a.active {
+    background-color: #8988886d; 
+    }
+    
+    #taskbar a:hover {
+    background-color: #5555556c;
+    }
+    /*************Taskbar************/
+    
+    /**************Footer************/
+    
+    footer {
+    background-color: black;
+    color: #b7b7b7;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    }
+    
+    footer div {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    }
+    
+    footer h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+    }
+    
+    footer a {
+    color: #b7b7b7;
+    text-decoration: none;
+    margin-bottom: 5px;
+    }
+    
+    /* Additional styles for the footer links */
+    footer a {
+    display: inline-block; 
+    margin-right: 10px; 
+    }
+    
+    /* Separate formatting for the copyright line */
+    footer .copyright {
+    flex: 1;
+    margin-top: 200px;
+    color: #fff;
+    position: absolute;
+    }
+    
+    /*************Footer***********/
+
+/* offers */
+.offer-view {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+    .discounts {
+    width: 20%;
+    margin: 10px;
+    box-sizing: border-box;
+    float:left;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: white;
+    }
+    .discounts img:hover {
+        transform: scale(1.1); 
+    }
+    img{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+   button {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px ;
+   }
+   .first {
+    background-color: black;
+   }
+   .second {
+    background-color: black;
+   }
+   .third {
+    background-color: black;
+   }
+   .fourth {
+    background-color: black;
+   }
+   .fifth {
+    background-color: black;
+   }
+   .sixth {
+    background-color: black;
+   }
+   .seventh {
+    background-color: black;
+   }
+   .eighth {
+    background-color: black;
+   }
+   .ninth {
+    background-color: black;
+   }
