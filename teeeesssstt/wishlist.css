@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-icon {
+    font-size: 48px;
+    margin-right: 10px;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links a, .cart-button {
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    background-color: #000;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.add-wish, .wish-list {
+    width: 100%;
+    text-align: center;
+}
+
+.wish-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wishlist-item {
+    width: 300px; /* Set both width and height to the same value for a square shape */
+    height: 300px; /* Adjust this value as needed to ensure it's larger than the content */
+    border: 1px solid #ddd;
+    margin: 20px; /* Ensure there's some space around each box */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+.wishlist-item img {
+    width: 150px; /* Adjust image width as needed, ensuring it's smaller than the box */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area well */
+    margin-bottom: 15px; /* Space between the image and the name */
+}
+
+.wishlist-item .item-name {
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px; /* Padding to ensure the name fits without overflow */
+    display: block;
+    white-space: normal; /* Allow the text to wrap naturally */
+    overflow: visible; /* Make any overflow text visible */
+    text-overflow: clip; /* Clip text instead of ellipsis, though overflow is now visible */
+    width: 100%; /* Ensure the name spans the full width of its container */
+    line-height: 1.2em; /* Line height for readability */
+}
+
+.delete-button {
+    margin-top: 10px; /* Adjust spacing above the delete button */
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
